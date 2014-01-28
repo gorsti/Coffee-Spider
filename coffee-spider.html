@@ -16,21 +16,22 @@
 	<body>
 		<h2>Coffee - Cupping Chart</h3>
 		<div ng-controller="appCtrl">
-			<canvas coffee-chart="coffee" chart type="Radar" options="options" data="chart" width="400" height="400"></canvas>
+			<canvas id="mycanvas" chart type="Radar" options="options" data="chart" width="400" height="400"></canvas>
 			<button ng-click="toDataURL()">
-      			Save Image
-      		</button>
+  			Save Image
+  		</button>
+  		<a href="{{dataUrl}}">Download</a>
 <!-- 			<hr>
 			<span>Number of dimensions: {{chart.labels.length}}</span>
 			<span>& Number of data points: {{chart.datasets[0].data.length}}</span> -->
 			<hr>
 			<span>{{chart.labels[0]}}: <input type="number" ng-model="chart.datasets[0].data[0]"></span>
 			<hr>
-			<span>{{chart.labels[1]}}: <input type="number" ng-model="chart.datasets[0].data[1]"</span>
+			<span>{{chart.labels[1]}}: <input type="number" ng-model="chart.datasets[0].data[1]"></span>
 			<hr>
-			<span>{{chart.labels[2]}}: <input type="number" ng-model="chart.datasets[0].data[2]"</span>
+			<span>{{chart.labels[2]}}: <input type="number" ng-model="chart.datasets[0].data[2]"></span>
 			<hr>
-			<span>{{chart.labels[3]}}: <input type="number" ng-model="chart.datasets[0].data[3]"</span>
+			<span>{{chart.labels[3]}}: <input type="number" ng-model="chart.datasets[0].data[3]"></span>
 			<hr>
 			<span>{{chart.labels[4]}}: <input type="number" ng-model="chart.datasets[0].data[4]"></span>
 			<hr>

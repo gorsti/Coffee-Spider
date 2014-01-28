@@ -1,11 +1,7 @@
 'use strict';
 
 angular.module('app', ['angles'])
-	.directive('coffeeChart', function() {
-		return function(scope, iElement, iAttr) {
-		};
-	})
-	.controller('appCtrl', ['$scope', function ($scope) {
+	.controller('appCtrl', ['$scope', '$document', function ($scope, $document) {
 		$scope.chart = {
 			labels : ["Acidity","Floral","Citrus","Soft fruit","Nutty","Malty","Caramel","Chocolate","Spicy","Mouthfeel","Aftertaste"],
 			datasets : [
@@ -18,9 +14,16 @@ angular.module('app', ['angles'])
 				}
 			], 
 		};
+		$scope.options = {
+			scaleOverride: true,
+			scaleSteps: 10,
+			scaleStepWidth: 1,
+			scaleStartValue: 0
+		};
 		$scope.toDataURL = function () {
-			var dataURL = canvas.toDataURL("image/png");
-			console.log (dataURL);
+			var ctx = document.getElementById('mycanvas').getContext("2d");
+			var dataURL = ctx.canvas.toDataURL("image/png");
+			$scope.dataUrl = dataURL;
 		};
 	}
 ]);
