@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+	<head>
+		<title>The Bean Shop - Cupping Chart</title>
+		<script type="text/javascript" src="vendor/Chart.js/Chart.min.js"></script>
+		<meta name = "viewport" content = "initial-scale = 1, user-scalable = no">
+		<link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+		<link href="http://cdn.shopify.com/s/files/1/0188/5540/t/2/assets/foundation.css?1890" rel="stylesheet" type="text/css"  media="all"  />
+  		<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />  
+  		<link href="http://cdn.shopify.com/s/files/1/0188/5540/t/2/assets/stylesheet.css?1890" rel="stylesheet" type="text/css"  media="all"  />
+		<style>
+			canvas{
+			}
+		</style>
+	</head>
+	<body>
+		<h3>The Bean Shop - Cupping Chart</h3>
+		<canvas id="canvas" width="400" height="400"></canvas>
+		
+	<script>
+			
+			var radarChartData = {
+				labels : ["Acidity","Floral","Citrus","Soft fruit","Nutty","Malty","Caramel","Chocolate","Spicy","Mouthfeel","Aftertaste"],
+				datasets : [
+					{
+						fillColor : "rgba(102,153,153,0.5)",
+						strokeColor : "rgba(118,64,0,1)",
+						pointColor : "rgba(118,64,0,1)",
+						pointStrokeColor : "#fff",
+						data : [1,2,3,4,5,6,7,8,9,0,1]
+					}
+				]
+			}
+
+			// var radarChartData = {
+			// 	labels : ["Fragrance / Aroma","Aftertaste","Acidity","Body","Balance","Sweetness","Uniformity","Clean Cup","Overall"],
+			// 	datasets : [
+			// 		{
+			// 			fillColor : "rgba(102,153,153,0.5)",
+			// 			strokeColor : "rgba(118,64,0,1)",
+			// 			pointColor : "rgba(118,64,0,1)",
+			// 			pointStrokeColor : "#fff",
+			// 			data : [1,2,3,4,5,6,7,8,9]
+			// 		}
+			// 	]
+			// }
+
+			// var radarChartData = {
+			// 	labels : ["Fragrance","Aroma","Flavour","Aftertaste","Acidity","Body","Uniformity","Balance","Clean Cup","Sweetness","Overall"],
+			// 	datasets : [
+			// 		{
+			// 			fillColor : "rgba(151,187,205,0.5)",
+			// 			strokeColor : "rgba(151,187,205,1)",
+			// 			pointColor : "rgba(151,187,205,1)",
+			// 			pointStrokeColor : "#fff",
+			// 			data : [65,77,90,81,56,65,75,54,60,70,80]
+			// 		}
+			// 	]
+			// }
+
+	var myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData,{scaleShowLabels : false, pointLabelFontSize : 10});
+	</script>	
+	</body>
+</html>		
+
